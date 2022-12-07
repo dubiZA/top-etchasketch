@@ -21,7 +21,10 @@ body {
 }
 
 .pixel {
-  /* border: 1px black solid; */
   width: 45px;
   height: 45px;
+}
+
+.pixelOn {
+  background-color: black;
 }

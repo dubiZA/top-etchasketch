@@ -1,6 +1,8 @@
+const containerDiv = document.querySelector(".container");
+
+containerDiv.addEventListener("mouseenter", () => getPixels());
 
 function drawCanvas() {
-  const containerDiv = document.querySelector(".container");
 
   for (let i = 0; i < 16; i++) {
     const pixelRowDiv = document.createElement("div");
@@ -16,4 +18,15 @@ function drawCanvas() {
       row.appendChild(pixel);
     }
   });
+}
+
+function getPixels() {
+  const pixels = document.querySelectorAll(".pixel");
+  pixels.forEach(pixel => pixel.addEventListener("mouseenter", function() {
+    turnPixelOn(pixel);
+  }));
+}
+
+function turnPixelOn(pixel) {
+  pixel.classList.add("pixelOn");
 }
